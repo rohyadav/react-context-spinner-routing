@@ -1,21 +1,17 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Comments from '../Components/Comments';
 import Users from '../Components/Users';
-import GlobalSpinner from './Spinner/GlobalSpinner';
-import GlobalSpinnerContextProvider from "./Spinner/GlobalSpinnerContext";
-
 
 const Routes = () => {
   // '/': () => <Home />,
   return (
+    <Router>
       <Switch>
-      <GlobalSpinnerContextProvider>
-       <GlobalSpinner />
         <Route component={Users} path="/" exact />
         <Route component={Comments} path="/comments" exact />
-        </GlobalSpinnerContextProvider>
       </Switch>
+      </Router>
   );
 };
 

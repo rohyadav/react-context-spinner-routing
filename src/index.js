@@ -1,15 +1,16 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-// import '../src/assets/style/style.css';
-//import './App.css';
 import Routes from './Global/Routes.jsx';
+import GlobalSpinner from './Global/Spinner/GlobalSpinner';
+import GlobalSpinnerContextProvider from "./Global/Spinner/GlobalSpinnerContext";
+
 
 render(
   <StrictMode>
-    <Router>
+    <GlobalSpinnerContextProvider>
+      <GlobalSpinner />
       <Routes />
-    </Router>
+    </GlobalSpinnerContextProvider>
   </StrictMode>,
   document.getElementById('root')
 );
